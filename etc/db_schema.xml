@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sales_order" resource="sales" engine="innodb" comment="Sales Flat Order">
+        <column xsi:type="smallint" name="need_gift_receipt" unsigned="true" nullable="true" identity="false" default="0" comment="Need Gift Receipt"/>
+    </table>
+    <table name="sales_order_grid" resource="sales" engine="innodb" comment="Sales Flat Order Grid">
+        <column xsi:type="smallint" name="need_gift_receipt" unsigned="true" nullable="true" identity="false" default="0" comment="Need Gift Receipt"/>
+    </table>
+    <table name="quote" resource="checkout" engine="innodb" comment="Sales Flat Quote">
+        <column xsi:type="smallint" name="need_gift_receipt" unsigned="true" nullable="true" identity="false" default="0" comment="Need Gift Receipt"/>
+    </table>
+</schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/guest-carts/:cartId/save-need-gift-receipt" method="PUT">
+        <service class="DMTQ\GiftReceipt\Api\GuestGiftReceiptManagementInterface" method="saveNeedGiftReceipt"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/carts/mine/save-need-gift-receipt" method="PUT">
+        <service class="DMTQ\GiftReceipt\Api\GiftReceiptManagementInterface" method="saveNeedGiftReceipt"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+
+
+    <route url="/V1/guest-carts/:cartId/remove-need-gift-receipt" method="DELETE">
+        <service class="DMTQ\GiftReceipt\Api\GuestGiftReceiptManagementInterface" method="removeNeedGiftReceipt"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/carts/mine/remove-need-gift-receipt" method="DELETE">
+        <service class="DMTQ\GiftReceipt\Api\GiftReceiptManagementInterface" method="removeNeedGiftReceipt"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+
+</routes>

@@ -1,0 +1,12 @@
+
+<?php if ($block->getNeedGiftReceipt()): ?>
+    <div class="order-info detail block-gift-receipt" style="margin: 20px 0">
+        <div class="block-content">
+            <div class="title"><strong><?= $block->escapeHtml(__('Gift Receipt')) ?></strong></div>
+            <div class="box-content">
+                <input type="checkbox" checked="checked" disabled="disabled"> <?= $block->escapeHtml(__('Need Gift Receipt')); ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+

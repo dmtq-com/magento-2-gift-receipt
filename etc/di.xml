@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="DMTQ\GiftReceipt\Api\Data\GiftReceiptInterface"
+                type="DMTQ\GiftReceipt\Model\Data\GiftReceipt" />
+    <preference for="DMTQ\GiftReceipt\Api\GiftReceiptManagementInterface"
+                type="DMTQ\GiftReceipt\Model\GiftReceiptManagement" />
+    <preference for="DMTQ\GiftReceipt\Api\GuestGiftReceiptManagementInterface"
+                type="DMTQ\GiftReceipt\Model\GuestGiftReceiptManagement" />
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="need_gift_receipt"
+                      xsi:type="string">sales_order.need_gift_receipt</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="add_gift_receipt" type="DMTQ\GiftReceipt\Plugin\Model\Order\AddGiftReceipt"/>
+    </type>
+</config>

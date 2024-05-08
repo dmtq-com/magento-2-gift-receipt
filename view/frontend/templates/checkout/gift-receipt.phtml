@@ -1,0 +1,15 @@
+<div class="block-gift-receipt" id="block-gift-receipt">
+    <div class="content">
+        <div data-gift-receipt-js="template" data-bind="scope: 'dmtq-gift-receipt'">
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        </div>
+        <script type="text/x-magento-init">
+            {
+                "[data-gift-receipt-js='template']": {
+                    "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+                }
+            }
+        </script>
+    </div>
+</div>
+

@@ -1,0 +1,10 @@
+<?php if ($needGiftReceipt = $block->getNeedGiftReceipt()): ?>
+    <section class="admin__page-section gift-receipt">
+        <div class="admin__page-section-title">
+            <span class="title"><?= $block->escapeHtml(__('Gift Receipt')) ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <input type="checkbox" checked="checked" disabled="disabled"><?= $block->escapeHtml(__('Need Gift Receipt')); ?>
+        </div>
+    </section>
+<?php endif; ?>

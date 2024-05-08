@@ -1,0 +1,10 @@
+
+<div class="cart-gift-receipt-list">
+    <!-- ko foreach: getRegion('messages') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    <!--/ko-->
+</div>
+<div class="cart-gift-receipt-form">
+    <input id="gift-receipt-checkbox" type="checkbox" data-bind="checked: isChecked" />
+    <label for="gift-receipt-checkbox"><span translate="'Add Gift Receipt'"></span></label>
+</div>
